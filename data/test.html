@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <style>
+      .ct-series-a .ct-line {
+        /* Set the colour of this series line */
+        stroke: red;
+        /* Control the thikness of your lines */
+        stroke-width: 5px;
+        /* Create a dashed line with a pattern */
+        stroke-dasharray: 10px 20px;
+      }
+      .ct-series-b .ct-line, .ct-series-b .ct-point {
+        stroke: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rain</h1>
+<div class="ct-chart ct-minor-sixth"></div>
+  <script>
+    var data = {
+      // A labels array that can contain any sort of values
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+      // Our series array that contains series objects or in this case series data arrays
+      series: [
+        [15, 2, 4, 2, 0],
+        [14, 3, 1, 2, 3]
+      ]
+    };
+    
+   var options = {
+     height: 600
+   };
+
+    // Create a new line chart object where as first parameter we pass in a selector
+    // that is resolving to our chart container element. The Second parameter
+    // is the actual data object.
+    new Chartist.Line('.ct-chart', data, options);
+  </script>
+  </body>
+</html>
+
+
